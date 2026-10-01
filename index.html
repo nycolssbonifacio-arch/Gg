@@ -1,0 +1,1575 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DA FÉ 22 | Barbearia Premium em Rio das Ostras</title>
+  <meta name="description" content="DA FÉ 22 - Barbearia premium na Rua Bangu, Rio das Ostras. Cortes degradê impecáveis, barba navalhada, bebidas geladas (água e cerveja) e atendimento exclusivo.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            carbon: '#0B0B0C',
+            graphite: '#141416',
+            smoke: '#1D1D20',
+            line: '#2A2A2E',
+            gold: {
+              DEFAULT: '#C6A15B',
+              light: '#E8C87A',
+              pale: '#F5E6C8',
+              dark: '#8C6A2B',
+              deep: '#5E471E'
+            },
+            ice: '#F4F4F5'
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            'gold': '0 10px 40px -10px rgba(198,161,91,0.5)',
+            'card': '0 20px 60px -15px rgba(0,0,0,0.7)',
+            'inner-gold': 'inset 0 1px 0 rgba(232,200,122,0.2)'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* ============ BASE ============ */
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { background: #0B0B0C; color: #EDEDED; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    ::selection { background: #C6A15B; color: #0B0B0C; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0B0B0C; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#C6A15B, #8C6A2B); border-radius: 10px; border: 2px solid #0B0B0C; }
+    .font-display { letter-spacing: .04em; }
+
+    /* ============ TEXTURES & EFFECTS ============ */
+    .noise::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #F5E6C8 0%, #E8C87A 25%, #C6A15B 50%, #E8C87A 75%, #F5E6C8 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shineText 5s linear infinite;
+    }
+    @keyframes shineText { to { background-position: 200% center; } }
+    .gold-divider { background: linear-gradient(90deg, transparent, #C6A15B, transparent); height: 1px; }
+    .card-border {
+      position: relative;
+      background: linear-gradient(#1D1D20, #1D1D20) padding-box, linear-gradient(135deg, rgba(198,161,91,.6), rgba(255,255,255,.08), rgba(198,161,91,.2)) border-box;
+      border: 1px solid transparent;
+    }
+
+    /* ============ BUTTONS ============ */
+    .btn-gold {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background: linear-gradient(135deg, #E8C87A 0%, #C6A15B 40%, #A8823D 100%);
+      color: #0B0B0C;
+      transition: .35s cubic-bezier(.4,0,.2,1);
+      box-shadow: 0 10px 35px -10px rgba(198,161,91,.55), inset 0 1px 0 rgba(255,255,255,.5);
+    }
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -80%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255,255,255,.7), transparent);
+      transform: skewX(-20deg);
+      transition: left .6s;
+      z-index: 1;
+    }
+    .btn-gold:hover::before { left: 130%; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 45px -10px rgba(198,161,91,.7); }
+    .btn-gold:active { transform: translateY(0); }
+    .btn-outline { border: 1px solid rgba(198,161,91,.5); transition: .35s; }
+    .btn-outline:hover { border-color: #C6A15B; background: rgba(198,161,91,.1); transform: translateY(-2px); }
+
+    /* ============ HEADER ============ */
+    #header { transition: .4s; }
+    #header.scrolled {
+      background: rgba(11,11,12,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(198,161,91,.2);
+      box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    }
+    .nav-link { position: relative; transition: .3s; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #E8C87A, #C6A15B);
+      transition: .35s;
+      border-radius: 2px;
+    }
+    .nav-link:hover { color: #E8C87A; }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ============ HERO ============ */
+    .hero-bg {
+      background: linear-gradient(100deg, rgba(11,11,12,.97) 20%, rgba(11,11,12,.75) 50%, rgba(11,11,12,.35) 100%),
+                  url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    }
+    .hero-grid {
+      background-image: linear-gradient(rgba(198,161,91,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(198,161,91,.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 70% at 30% 50%, black 30%, transparent 75%);
+    }
+    @keyframes floaty { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+    .floaty { animation: floaty 5s ease-in-out infinite; }
+    .floaty-delay { animation: floaty 6s ease-in-out infinite; animation-delay: 1.2s; }
+    @keyframes pulseGold {
+      0%,100%{box-shadow:0 0 0 0 rgba(198,161,91,.5)}
+      50%{box-shadow:0 0 0 18px rgba(198,161,91,0)}
+    }
+    .pulse-gold { animation: pulseGold 2.2s infinite; }
+    @keyframes scrollDot { 0%{transform:translateY(0);opacity:1} 100%{transform:translateY(16px);opacity:0} }
+    .scroll-dot { animation: scrollDot 1.6s ease-in-out infinite; }
+
+    /* ============ MARQUEE ============ */
+    .marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    /* ============ REVEAL ============ */
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-50px); transition: .9s cubic-bezier(.22,1,.36,1); }
+    .reveal-right { opacity: 0; transform: translateX(50px); transition: .9s cubic-bezier(.22,1,.36,1); }
+    .reveal-left.active, .reveal-right.active { opacity: 1; transform: translateX(0); }
+    .stagger-1 { transition-delay: .1s; }
+    .stagger-2 { transition-delay: .2s; }
+    .stagger-3 { transition-delay: .3s; }
+    .stagger-4 { transition-delay: .4s; }
+
+    /* ============ CARDS & GALLERY ============ */
+    .service-card { transition: .5s cubic-bezier(.22,1,.36,1); }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -15px rgba(0,0,0,.8), 0 0 0 1px rgba(198,161,91,.4); }
+    .service-card img { transition: 1s cubic-bezier(.22,1,.36,1); }
+    .service-card:hover img { transform: scale(1.08); }
+    .gallery-item { overflow: hidden; position: relative; cursor: zoom-in; border-radius: 1rem; }
+    .gallery-item img { transition: .8s cubic-bezier(.22,1,.36,1); }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item .overlay { opacity: 0; transition: .4s; }
+    .gallery-item:hover .overlay { opacity: 1; }
+    .filter-btn { transition: .3s; }
+    .filter-btn.active { background: linear-gradient(135deg, #E8C87A, #C6A15B); color: #0B0B0C; border-color: transparent; font-weight: 700; }
+
+    /* ============ TESTIMONIALS & FAQ ============ */
+    #tTrack { transition: transform .7s cubic-bezier(.22,1,.36,1); }
+    .t-card { transition: .4s; }
+    .t-card:hover { border-color: rgba(198,161,91,.5); transform: translateY(-6px); }
+    .dot { transition: .3s; cursor: pointer; }
+    .dot.active { width: 32px; background: #C6A15B; }
+    .faq-item .faq-answer { max-height: 0; overflow: hidden; transition: max-height .5s cubic-bezier(.22,1,.36,1); }
+    .faq-item.open .faq-answer { max-height: 220px; }
+    .faq-item .faq-icon { transition: .4s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); color: #C6A15B; }
+    .faq-item.open { border-color: rgba(198,161,91,.4); }
+
+    /* ============ MODAL & INTERACTION ============ */
+    .modal-bg { background: rgba(0,0,0,.8); backdrop-filter: blur(8px); }
+    .modal-panel { animation: modalIn .45s cubic-bezier(.22,1,.36,1); }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(40px) scale(.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .slot { transition: .25s; cursor: pointer; }
+    .slot:hover:not(.disabled) { border-color: #C6A15B; background: rgba(198,161,91,.12); }
+    .slot.selected { background: linear-gradient(135deg, #E8C87A, #C6A15B); color: #0B0B0C; border-color: transparent; font-weight: 700; }
+    .service-opt { transition: .3s; cursor: pointer; }
+    .service-opt.selected { border-color: #C6A15B; background: rgba(198,161,91,.15); box-shadow: 0 0 0 1px #C6A15B; }
+    .day-opt.selected { background: linear-gradient(135deg, #E8C87A, #C6A15B); color: #0B0B0C; border-color: transparent; }
+    .day-opt.selected span { color: #0B0B0C !important; }
+    #preloader { transition: opacity .7s, visibility .7s; }
+    #preloader.hidden { opacity: 0; visibility: hidden; }
+    .loader-bar { animation: load 1.6s ease-in-out infinite; }
+    @keyframes load { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
+    @keyframes waPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,.5); }
+      70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    .wa-float { animation: waPulse 2s infinite; }
+    #toast { transition: .5s cubic-bezier(.22,1,.36,1); }
+    input, select, textarea { color-scheme: dark; }
+    input:focus, select:focus, textarea:focus { border-color: #C6A15B !important; box-shadow: 0 0 0 3px rgba(198,161,91,.15); outline: none; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "DA FÉ 22",
+    "telephone": "+55-21-95922-2051",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Bangu",
+      "addressLocality": "Rio das Ostras",
+      "addressRegion": "RJ",
+      "addressCountry": "BR"
+    },
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "327"
+    }
+  }
+  </script>
+</head>
+
+<body class="noise antialiased">
+
+  <!-- ================= PRELOADER ================= -->
+  <div id="preloader" class="fixed inset-0 z-[100] bg-carbon flex flex-col items-center justify-center">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-light to-gold-dark flex items-center justify-center shadow-gold">
+        <i class="fa-solid fa-scissors text-carbon text-2xl"></i>
+      </div>
+      <div>
+        <p class="font-display text-4xl leading-none tracking-wide">DA FÉ <span class="text-gold-gradient">22</span></p>
+        <p class="text-[10px] tracking-[.4em] text-zinc-500 uppercase">Rio das Ostras • RJ</p>
+      </div>
+    </div>
+    <div class="w-56 h-[3px] bg-white/10 rounded-full overflow-hidden">
+      <div class="loader-bar h-full w-2/5 bg-gradient-to-r from-gold-light to-gold rounded-full"></div>
+    </div>
+    <p class="mt-4 text-xs tracking-[.3em] uppercase text-zinc-500">Preparando o ambiente...</p>
+  </div>
+
+  <!-- Barra de progresso de scroll -->
+  <div id="scrollProgress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-gold-dark via-gold-light to-gold z-[90] w-0"></div>
+
+  <!-- ================= 1. HEADER ================= -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-[80]">
+    <div class="bg-gradient-to-r from-gold-deep via-gold-dark to-gold-deep text-center py-1.5 px-4 flex items-center justify-center gap-3">
+      <p class="text-[11px] md:text-xs font-heading font-semibold tracking-widest uppercase text-gold-pale flex items-center gap-2">
+        <i class="fa-solid fa-location-dot"></i> Rua Bangu, Rio das Ostras • Bebidas geladas no local 🍺
+      </p>
+      <a href="https://instagram.com/nycolasxz0_" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 text-xs text-white bg-black/30 hover:bg-black/50 px-3 py-0.5 rounded-full transition">
+        <i class="fa-brands fa-instagram text-gold-light"></i> @nycolasxz0_
+      </a>
+    </div>
+
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[72px]">
+        <!-- Logo -->
+        <a href="#inicio" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-light via-gold to-gold-dark flex items-center justify-center shadow-gold group-hover:rotate-12 transition duration-300">
+            <i class="fa-solid fa-scissors text-carbon text-lg"></i>
+          </div>
+          <div class="leading-none">
+            <span class="font-display text-3xl tracking-wide text-white">DA FÉ <span class="text-gold-gradient">22</span></span>
+            <span class="block text-[9px] tracking-[.45em] text-zinc-400 uppercase mt-0.5">Rio das Ostras</span>
+          </div>
+        </a>
+
+        <!-- Links desktop -->
+        <div class="hidden lg:flex items-center gap-8 font-heading text-sm font-semibold tracking-wide">
+          <a href="#inicio" class="nav-link text-zinc-300">INÍCIO</a>
+          <a href="#cortes" class="nav-link text-zinc-300">CORTES & PREÇOS</a>
+          <a href="#bebidas" class="nav-link text-zinc-300 flex items-center gap-1.5"><i class="fa-solid fa-beer-mug-empty text-gold text-xs"></i>BAR & BEBIDAS</a>
+          <a href="#galeria" class="nav-link text-zinc-300">GALERIA</a>
+          <a href="#avaliacoes" class="nav-link text-zinc-300">AVALIAÇÕES</a>
+          <a href="#contato" class="nav-link text-zinc-300">LOCALIZAÇÃO</a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="https://instagram.com/nycolasxz0_" target="_blank" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center text-zinc-300 hover:text-gold hover:border-gold transition" title="Instagram @nycolasxz0_">
+            <i class="fa-brands fa-instagram text-base"></i>
+          </a>
+          <a href="https://wa.me/5521959222051?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20DA%20F%C3%89%2022%20em%20Rio%20das%20Ostras." target="_blank" class="btn-gold font-heading font-extrabold text-sm tracking-wide px-5 py-2.5 rounded-xl flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i> AGENDAR HORÁRIO
+          </a>
+        </div>
+
+        <!-- Hamburguer mobile -->
+        <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-xl border border-white/15 flex flex-col items-center justify-center gap-1.5" aria-label="Abrir menu">
+          <span class="menu-line block w-5 h-[2px] bg-white transition-all"></span>
+          <span class="menu-line block w-5 h-[2px] bg-gold transition-all"></span>
+          <span class="menu-line block w-5 h-[2px] bg-white transition-all"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Menu Mobile -->
+  <div id="mobileMenu" class="fixed inset-0 z-[75] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="mobileOverlay"></div>
+    <div id="mobilePanel" class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-graphite border-l border-gold/20 p-8 pt-28 flex flex-col translate-x-full transition-transform duration-500 overflow-y-auto">
+      <p class="text-[11px] tracking-[.35em] uppercase text-gold mb-4">Navegação • Rio das Ostras</p>
+      <nav class="flex flex-col gap-2 font-display text-3xl">
+        <a href="#inicio" class="mobile-link py-2 text-white hover:text-gold-light transition flex items-center justify-between">INÍCIO <i class="fa-solid fa-arrow-right text-xs text-gold"></i></a>
+        <a href="#cortes" class="mobile-link py-2 text-white hover:text-gold-light transition flex items-center justify-between">CORTES & PREÇOS <i class="fa-solid fa-arrow-right text-xs text-gold"></i></a>
+        <a href="#bebidas" class="mobile-link py-2 text-white hover:text-gold-light transition flex items-center justify-between">BEBIDAS & BAR <i class="fa-solid fa-beer-mug-empty text-xs text-gold"></i></a>
+        <a href="#galeria" class="mobile-link py-2 text-white hover:text-gold-light transition flex items-center justify-between">GALERIA <i class="fa-solid fa-arrow-right text-xs text-gold"></i></a>
+        <a href="#avaliacoes" class="mobile-link py-2 text-white hover:text-gold-light transition flex items-center justify-between">AVALIAÇÕES <i class="fa-solid fa-arrow-right text-xs text-gold"></i></a>
+        <a href="#contato" class="mobile-link py-2 text-white hover:text-gold-light transition flex items-center justify-between">CONTATO & MAPA <i class="fa-solid fa-arrow-right text-xs text-gold"></i></a>
+      </nav>
+
+      <div class="gold-divider my-5"></div>
+
+      <a href="https://instagram.com/nycolasxz0_" target="_blank" class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-3 text-zinc-200 hover:border-gold transition mb-4">
+        <i class="fa-brands fa-instagram text-2xl text-gold"></i>
+        <div class="text-left">
+          <p class="text-xs text-zinc-400">Siga no Instagram</p>
+          <p class="font-heading font-bold text-sm text-white">@nycolasxz0_</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/5521959222051?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20DA%20F%C3%89%2022%20(Rua%20Bangu,%20Rio%20das%20Ostras)." target="_blank" class="btn-gold rounded-xl py-3.5 text-center font-heading font-extrabold flex items-center justify-center gap-2">
+        <i class="fa-brands fa-whatsapp text-xl"></i> AGENDAR HORÁRIO
+      </a>
+      
+      <p class="mt-6 text-xs text-zinc-500 text-center">Rua Bangu • Rio das Ostras - RJ</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ================= 2. HERO ================= -->
+    <section id="inicio" class="hero-bg relative min-h-screen flex items-center pt-[140px] pb-20 overflow-hidden">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px]"></div>
+      <div class="absolute bottom-0 -left-32 w-[400px] h-[400px] bg-gold-dark/20 rounded-full blur-[120px]"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-14 items-center">
+        <!-- Texto -->
+        <div>
+          <div class="reveal inline-flex items-center gap-2 border border-gold/30 bg-gold/10 backdrop-blur rounded-full px-4 py-2 mb-6">
+            <span id="statusDot" class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            <span id="statusText" class="text-xs font-heading font-semibold tracking-widest uppercase text-gold-pale">Aberto agora • Rua Bangu, Rio das Ostras</span>
+          </div>
+
+          <p class="reveal stagger-1 text-gold font-heading font-bold tracking-[.35em] text-xs uppercase mb-3">— Barbearia Premium em Rio das Ostras</p>
+          
+          <h1 class="reveal stagger-1 font-display text-5xl sm:text-7xl xl:text-[5.8rem] leading-[.95] text-white">
+            ONDE O ESTILO<br>ENCONTRA A SUA<br><span class="text-gold-gradient">MELHOR VERSÃO.</span>
+          </h1>
+
+          <p class="reveal stagger-2 mt-6 text-zinc-300 text-lg leading-relaxed max-w-xl">
+            Na <strong class="text-white">DA FÉ 22</strong>, cada corte é executado com precisão cirúrgica na navalha. Venha relaxar, curtir uma <strong class="text-gold-light">cerveja gelada</strong> ou água fresca e elevar sua autoestima no coração de Rio das Ostras.
+          </p>
+
+          <!-- Social Badge Destaque -->
+          <div class="reveal stagger-2 mt-5 inline-flex items-center gap-3 bg-smoke/80 border border-gold/30 rounded-xl px-4 py-2.5">
+            <i class="fa-brands fa-instagram text-gold text-lg"></i>
+            <span class="text-xs text-zinc-400">Instagram oficial:</span>
+            <a href="https://instagram.com/nycolasxz0_" target="_blank" class="font-heading font-bold text-sm text-gold-light hover:underline">@nycolasxz0_</a>
+          </div>
+
+          <!-- Prova social mini -->
+          <div class="reveal stagger-3 mt-6 flex flex-wrap items-center gap-4">
+            <div class="flex -space-x-3">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" class="w-11 h-11 rounded-full border-2 border-carbon object-cover" alt="Cliente">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" class="w-11 h-11 rounded-full border-2 border-carbon object-cover" alt="Cliente">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop" class="w-11 h-11 rounded-full border-2 border-carbon object-cover" alt="Cliente">
+              <span class="w-11 h-11 rounded-full border-2 border-carbon bg-gold text-carbon text-xs font-extrabold flex items-center justify-center">+2k</span>
+            </div>
+            <div>
+              <div class="flex gap-0.5 text-yellow-400 text-sm">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="text-sm text-zinc-400 mt-0.5"><strong class="text-white">4.9/5</strong> — Clientes satisfeitos em Rio das Ostras</p>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="reveal stagger-4 mt-8 flex flex-col sm:flex-row gap-4">
+            <button data-booking-open class="btn-gold font-heading font-extrabold tracking-wide px-8 py-4 rounded-xl text-base flex items-center justify-center gap-3">
+              <i class="fa-solid fa-calendar-check text-lg"></i> GARANTIR MEU HORÁRIO
+            </button>
+            <a href="https://wa.me/5521959222051?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20DA%20F%C3%89%2022%20em%20Rio%20das%20Ostras." target="_blank" class="btn-outline rounded-xl px-8 py-4 font-heading font-bold text-sm flex items-center justify-center gap-2 text-white">
+              <i class="fa-brands fa-whatsapp text-lg text-green-400"></i> FALAR NO WHATSAPP
+            </a>
+          </div>
+
+          <div class="reveal stagger-4 mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-zinc-400">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-gold"></i> Rua Bangu</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-beer-mug-empty text-gold"></i> Cerveja & Água no local</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i> Sem fila</span>
+          </div>
+        </div>
+
+        <!-- Imagem destaque -->
+        <div class="reveal-right relative hidden lg:block">
+          <div class="relative rounded-3xl overflow-hidden border border-gold/25 shadow-card">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=900&auto=format&fit=crop" alt="Corte impecável DA FÉ 22" class="w-full h-[560px] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon via-transparent to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+              <div>
+                <p class="text-[10px] tracking-[.3em] uppercase text-gold-light font-bold">Assinatura da casa</p>
+                <p class="font-display text-3xl text-white">DEGRADÊ NAVALHADO</p>
+              </div>
+              <span class="bg-gold text-carbon font-heading font-extrabold px-4 py-2 rounded-xl">R$ 45</span>
+            </div>
+          </div>
+
+          <!-- Card flutuante Bebidas -->
+          <div class="floaty absolute -left-8 top-8 bg-graphite/95 backdrop-blur border border-gold/30 rounded-2xl p-4 shadow-card flex items-center gap-3 w-64">
+            <div class="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center">
+              <i class="fa-solid fa-beer-mug-empty text-gold text-xl"></i>
+            </div>
+            <div>
+              <p class="font-heading font-extrabold text-white text-sm">Bebidas Geladas</p>
+              <p class="text-xs text-zinc-300">Cerveja <span class="text-gold font-bold">R$ 6,00</span> • Água <span class="text-gold font-bold">R$ 2,50</span></p>
+            </div>
+          </div>
+
+          <!-- Card flutuante 2 -->
+          <div class="floaty-delay absolute -right-4 bottom-24 bg-graphite/95 backdrop-blur border border-gold/25 rounded-2xl p-4 shadow-card w-64">
+            <div class="flex gap-1 text-yellow-400 text-xs mb-2">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm text-zinc-300 italic">"Cortei na Rua Bangu, atendimento nota 10 e cervejinha trincando!"</p>
+            <p class="text-xs text-gold mt-2 font-bold">— Matheus R. • Rio das Ostras</p>
+          </div>
+
+          <!-- Selo -->
+          <div class="absolute -top-6 right-8 w-24 h-24 rounded-full bg-gradient-to-br from-gold-light to-gold-dark flex flex-col items-center justify-center shadow-gold pulse-gold">
+            <i class="fa-solid fa-scissors text-carbon text-lg"></i>
+            <span class="font-display text-carbon text-base leading-none mt-1 text-center font-bold">DA FÉ<br>22</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicador scroll -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-zinc-500">
+        <div class="w-6 h-10 rounded-full border border-zinc-700 flex justify-center pt-2">
+          <div class="scroll-dot w-1 h-2 bg-gold rounded-full"></div>
+        </div>
+        <span class="text-[10px] tracking-[.3em] uppercase">Role</span>
+      </div>
+    </section>
+
+    <!-- ================= FAIXA MARQUEE ================= -->
+    <div class="bg-gradient-to-r from-gold-deep via-[#8C6A2B] to-gold-deep py-3.5 overflow-hidden border-y border-gold-light/30 relative z-10">
+      <div class="marquee-track font-display text-carbon text-xl tracking-widest gap-0">
+        <span class="px-6 whitespace-nowrap">CORTE DEGRADÊ ✦ BARBA NA NAVALHA ✦ CERVEJA GELADA R$ 6,00 ✦ ÁGUA R$ 2,50 ✦ RUA BANGU - RIO DAS OSTRAS ✦ INSTAGRAM @NYCOLASXZ0_ ✦&nbsp;</span>
+        <span class="px-6 whitespace-nowrap">CORTE DEGRADÊ ✦ BARBA NA NAVALHA ✦ CERVEJA GELADA R$ 6,00 ✦ ÁGUA R$ 2,50 ✦ RUA BANGU - RIO DAS OSTRAS ✦ INSTAGRAM @NYCOLASXZ0_ ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ================= NÚMEROS ================= -->
+    <section class="bg-graphite border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="reveal">
+          <p class="font-display text-5xl text-gold-gradient"><span class="counter" data-target="5400">0</span>+</p>
+          <p class="text-xs tracking-[.25em] uppercase text-zinc-400 mt-1">Cortes realizados</p>
+        </div>
+        <div class="reveal stagger-1">
+          <p class="font-display text-5xl text-gold-gradient"><span class="counter" data-target="1200">0</span>+</p>
+          <p class="text-xs tracking-[.25em] uppercase text-zinc-400 mt-1">Clientes fiéis</p>
+        </div>
+        <div class="reveal stagger-2">
+          <p class="font-display text-5xl text-gold-gradient">RUA BANGU</p>
+          <p class="text-xs tracking-[.25em] uppercase text-zinc-400 mt-1">Rio das Ostras - RJ</p>
+        </div>
+        <div class="reveal stagger-3">
+          <p class="font-display text-5xl text-gold-gradient">4.9 <i class="fa-solid fa-star text-2xl ml-1 align-middle"></i></p>
+          <p class="text-xs tracking-[.25em] uppercase text-zinc-400 mt-1">Avaliação média</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. CORTES E PREÇOS ================= -->
+    <section id="cortes" class="py-24 bg-graphite relative border-y border-white/5 overflow-hidden">
+      <div class="absolute -top-20 left-1/4 w-[500px] h-[300px] bg-gold/8 blur-[130px] rounded-full"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="reveal text-gold font-heading font-bold tracking-[.35em] text-xs uppercase mb-3">— Tabela Oficial</p>
+          <h2 class="reveal stagger-1 font-display text-5xl sm:text-6xl text-white">NOSSOS CORTES <span class="text-gold-gradient">& PREÇOS</span></h2>
+          <div class="gold-divider w-40 mx-auto mt-5"></div>
+          <p class="reveal stagger-2 text-zinc-400 mt-5">Qualidade premium em cada detalhe. Todos os cortes incluem acabamento alinhado na navalha e produtos de alta performance.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <article class="reveal service-card card-border rounded-2xl overflow-hidden bg-smoke">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=700&auto=format&fit=crop" alt="Corte Degradê" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-smoke via-transparent to-transparent"></div>
+              <span class="absolute top-4 left-4 bg-carbon/80 backdrop-blur border border-gold/40 text-gold-light text-[11px] font-heading font-bold tracking-widest uppercase px-3 py-1.5 rounded-full">Mais pedido</span>
+              <span class="absolute bottom-4 right-4 bg-gradient-to-br from-gold-light to-gold-dark text-carbon font-heading font-extrabold px-4 py-2 rounded-xl shadow-gold">R$ 45</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-extrabold text-xl text-white">Corte Degradê / Fade</h3>
+              <p class="text-sm text-zinc-400 mt-2 leading-relaxed">Degradê alto, médio ou baixo com transição perfeita, tesoura em cima e navalha no acabamento.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Acabamento na navalha</li>
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Finalização com pomada premium</li>
+              </ul>
+              <button data-booking-open data-service="Corte Degradê / Fade — R$ 45" class="mt-5 w-full btn-outline rounded-xl py-3 font-heading font-bold text-sm text-gold-light border-gold/40">
+                <i class="fa-brands fa-whatsapp mr-2"></i>AGENDAR ESTE CORTE
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2 DESTAQUE -->
+          <article class="reveal stagger-1 service-card rounded-2xl overflow-hidden relative bg-gradient-to-b from-gold/20 via-smoke to-smoke border-2 border-gold shadow-gold">
+            <div class="bg-gradient-to-r from-gold-light to-gold-dark text-carbon text-center py-2 font-heading font-extrabold text-xs tracking-[.25em] uppercase">
+              <i class="fa-solid fa-crown mr-2"></i>Oferta da casa — O mais completo
+            </div>
+            <div class="relative h-52 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=700&auto=format&fit=crop" alt="Combo Corte + Barba" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-smoke via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 right-4 flex items-center gap-2">
+                <span class="text-zinc-400 line-through text-sm font-bold">R$ 80</span>
+                <span class="bg-gradient-to-br from-gold-light to-gold-dark text-carbon font-heading font-extrabold px-4 py-2 rounded-xl shadow-gold text-lg">R$ 70</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-extrabold text-xl text-white">Combo Completo <span class="text-gold-light">Corte + Barba</span></h3>
+              <p class="text-sm text-zinc-400 mt-2 leading-relaxed">O ritual completo: corte degradê + barba modelada com toalha quente, hidratação e sobrancelha cortesia.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Toalha quente + óleo de barba</li>
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Sobrancelha cortesia</li>
+              </ul>
+              <button data-booking-open data-service="Combo Completo Corte + Barba — R$ 70" class="mt-5 w-full btn-gold rounded-xl py-3.5 font-heading font-extrabold text-sm">
+                <i class="fa-solid fa-bolt mr-2"></i>QUERO O COMBO
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="reveal stagger-2 service-card card-border rounded-2xl overflow-hidden bg-smoke">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=700&auto=format&fit=crop" alt="Barba modelada" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-smoke via-transparent to-transparent"></div>
+              <span class="absolute bottom-4 right-4 bg-gradient-to-br from-gold-light to-gold-dark text-carbon font-heading font-extrabold px-4 py-2 rounded-xl shadow-gold">R$ 35</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-extrabold text-xl text-white">Barba Modelada + Toalha</h3>
+              <p class="text-sm text-zinc-400 mt-2 leading-relaxed">Design de barba personalizado, navalha afiada, toalha quente e finalização com balm refrescante.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Alinhamento cirúrgico</li>
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Hidratação com óleos premium</li>
+              </ul>
+              <button data-booking-open data-service="Barba Modelada + Toalha Quente — R$ 35" class="mt-5 w-full btn-outline rounded-xl py-3 font-heading font-bold text-sm text-gold-light border-gold/40">
+                <i class="fa-brands fa-whatsapp mr-2"></i>AGENDAR ESTE SERVIÇO
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="reveal service-card card-border rounded-2xl overflow-hidden bg-smoke">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=700&auto=format&fit=crop" alt="Corte clássico" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-smoke via-transparent to-transparent"></div>
+              <span class="absolute bottom-4 right-4 bg-gradient-to-br from-gold-light to-gold-dark text-carbon font-heading font-extrabold px-4 py-2 rounded-xl shadow-gold">R$ 40</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-extrabold text-xl text-white">Corte Clássico / Tesoura</h3>
+              <p class="text-sm text-zinc-400 mt-2 leading-relaxed">Social elegante ou repicado trabalhado 100% na tesoura para visual clean e sofisticado.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Consultoria de visagismo</li>
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Lavagem e finalização</li>
+              </ul>
+              <button data-booking-open data-service="Corte Clássico / Tesoura — R$ 40" class="mt-5 w-full btn-outline rounded-xl py-3 font-heading font-bold text-sm text-gold-light border-gold/40">
+                <i class="fa-brands fa-whatsapp mr-2"></i>AGENDAR ESTE CORTE
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="reveal stagger-1 service-card card-border rounded-2xl overflow-hidden bg-smoke">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?q=80&w=700&auto=format&fit=crop" alt="Pigmentação" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-smoke via-transparent to-transparent"></div>
+              <span class="absolute top-4 left-4 bg-gold text-carbon text-[11px] font-heading font-extrabold tracking-widest uppercase px-3 py-1.5 rounded-full">Efeito HD</span>
+              <span class="absolute bottom-4 right-4 bg-gradient-to-br from-gold-light to-gold-dark text-carbon font-heading font-extrabold px-4 py-2 rounded-xl shadow-gold">R$ 55</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-extrabold text-xl text-white">Degradê + Pigmentação</h3>
+              <p class="text-sm text-zinc-400 mt-2 leading-relaxed">Corte navalhado com sombreamento e preenchimento para visual denso, moderno e ultra definido.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Pigmentos antialérgicos</li>
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Duração de até 7 dias</li>
+              </ul>
+              <button data-booking-open data-service="Degradê + Pigmentação — R$ 55" class="mt-5 w-full btn-outline rounded-xl py-3 font-heading font-bold text-sm text-gold-light border-gold/40">
+                <i class="fa-brands fa-whatsapp mr-2"></i>AGENDAR ESTE CORTE
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="reveal stagger-2 service-card card-border rounded-2xl overflow-hidden bg-smoke">
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?q=80&w=700&auto=format&fit=crop" alt="Selagem" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-smoke via-transparent to-transparent"></div>
+              <span class="absolute bottom-4 right-4 bg-gradient-to-br from-gold-light to-gold-dark text-carbon font-heading font-extrabold px-4 py-2 rounded-xl shadow-gold">R$ 80</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-extrabold text-xl text-white">Selagem & Alinhamento</h3>
+              <p class="text-sm text-zinc-400 mt-2 leading-relaxed">Tratamento capilar que reduz o volume, alinha a estrutura dos fios e entrega brilho intenso.</p>
+              <ul class="mt-4 space-y-2 text-sm text-zinc-300">
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Hidratação profunda</li>
+                <li><i class="fa-solid fa-check text-gold mr-2"></i>Fios disciplinados por mais tempo</li>
+              </ul>
+              <button data-booking-open data-service="Selagem — R$ 80" class="mt-5 w-full btn-outline rounded-xl py-3 font-heading font-bold text-sm text-gold-light border-gold/40">
+                <i class="fa-brands fa-whatsapp mr-2"></i>AGENDAR ESTE SERVIÇO
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO ESPECIAL: BEBIDAS & BAR ================= -->
+    <section id="bebidas" class="py-20 bg-carbon relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="card-border rounded-3xl bg-gradient-to-r from-smoke via-graphite to-smoke p-8 sm:p-12 relative overflow-hidden">
+          <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-6">
+              <span class="inline-flex items-center gap-2 text-gold font-heading font-extrabold text-xs tracking-widest uppercase bg-gold/10 px-3.5 py-1.5 rounded-full border border-gold/20 mb-4">
+                <i class="fa-solid fa-snowflake"></i> BAR EXCLUSIVO NO LOCAL
+              </span>
+              <h2 class="font-display text-4xl sm:text-5xl text-white leading-none">
+                ENQUANTO VOCÊ CORTA,<br><span class="text-gold-gradient">SUA BEBIDA TÁ GELADA!</span>
+              </h2>
+              <p class="text-zinc-400 mt-4 leading-relaxed">
+                Ambiente climatizado, resenha de primeira e bebidas sempre trincando na temperatura certa para acompanhar seu atendimento na DA FÉ 22.
+              </p>
+              <div class="mt-6 flex items-center gap-3">
+                <a href="https://instagram.com/nycolasxz0_" target="_blank" class="inline-flex items-center gap-2 text-sm text-gold-light hover:text-white font-heading font-semibold transition">
+                  <i class="fa-brands fa-instagram text-lg text-gold"></i> Veja os bastidores no @nycolasxz0_
+                </a>
+              </div>
+            </div>
+
+            <!-- Cards de Preços de Bebidas -->
+            <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+              <!-- Cerveja -->
+              <div class="bg-carbon/90 border border-gold/30 rounded-2xl p-6 relative overflow-hidden group hover:border-gold transition duration-300">
+                <div class="absolute top-0 right-0 bg-gold text-carbon text-[10px] font-heading font-extrabold px-3 py-1 rounded-bl-xl uppercase">
+                  Trincando
+                </div>
+                <div class="w-14 h-14 rounded-2xl bg-gold/15 flex items-center justify-center text-gold text-2xl mb-4 group-hover:scale-110 transition">
+                  <i class="fa-solid fa-beer-mug-empty"></i>
+                </div>
+                <h3 class="font-heading font-extrabold text-xl text-white">Cerveja Gelada</h3>
+                <p class="text-xs text-zinc-400 mt-1">Lata bem gelada pra relaxar no corte</p>
+                <div class="mt-5 flex items-baseline justify-between pt-4 border-t border-white/10">
+                  <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold">Valor unitário</span>
+                  <span class="font-display text-3xl text-gold-gradient font-bold">R$ 6,00</span>
+                </div>
+              </div>
+
+              <!-- Água -->
+              <div class="bg-carbon/90 border border-white/15 rounded-2xl p-6 relative overflow-hidden group hover:border-gold/60 transition duration-300">
+                <div class="w-14 h-14 rounded-2xl bg-blue-500/15 flex items-center justify-center text-blue-400 text-2xl mb-4 group-hover:scale-110 transition">
+                  <i class="fa-solid fa-bottle-water"></i>
+                </div>
+                <h3 class="font-heading font-extrabold text-xl text-white">Água Mineral</h3>
+                <p class="text-xs text-zinc-400 mt-1">Gelada ou natural para hidratação</p>
+                <div class="mt-5 flex items-baseline justify-between pt-4 border-t border-white/10">
+                  <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold">Valor unitário</span>
+                  <span class="font-display text-3xl text-white font-bold">R$ 2,50</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. GALERIA ================= -->
+    <section id="galeria" class="py-24 bg-graphite border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <p class="reveal text-gold font-heading font-bold tracking-[.35em] text-xs uppercase mb-3">— Portfólio Real</p>
+            <h2 class="reveal stagger-1 font-display text-5xl sm:text-6xl text-white leading-none">GALERIA DE <span class="text-gold-gradient">CORTES</span></h2>
+            <p class="reveal stagger-2 text-zinc-400 mt-3 max-w-xl">Trabalhos reais produzidos na DA FÉ 22. Clique nas fotos para ampliar e conferir a definição do degradê.</p>
+          </div>
+          <div class="reveal flex flex-wrap gap-2">
+            <button class="filter-btn active text-xs font-heading font-bold tracking-widest uppercase border border-white/15 rounded-full px-5 py-2.5 text-zinc-300" data-filter="all">Todos</button>
+            <button class="filter-btn text-xs font-heading font-bold tracking-widest uppercase border border-white/15 rounded-full px-5 py-2.5 text-zinc-300" data-filter="fade">Degradês</button>
+            <button class="filter-btn text-xs font-heading font-bold tracking-widest uppercase border border-white/15 rounded-full px-5 py-2.5 text-zinc-300" data-filter="barba">Barba</button>
+          </div>
+        </div>
+
+        <div id="galleryGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="reveal gallery-item h-64 sm:h-80 border border-white/10" data-cat="fade" data-caption="Degradê alto navalhado com acabamento cirúrgico">
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=600&auto=format&fit=crop" alt="Degradê alto" class="w-full h-full object-cover" loading="lazy">
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-carbon/95 via-carbon/20 to-transparent flex flex-col justify-end p-4">
+              <p class="font-heading font-bold text-white text-sm">Degradê Alto Navalhado</p>
+              <p class="text-xs text-gold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Clique para ampliar</p>
+            </div>
+          </div>
+
+          <div class="reveal stagger-1 gallery-item h-64 sm:h-80 border border-white/10" data-cat="barba" data-caption="Barba desenhada com toalha quente e lâmina descartável">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop" alt="Barba modelada" class="w-full h-full object-cover" loading="lazy">
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-carbon/95 via-carbon/20 to-transparent flex flex-col justify-end p-4">
+              <p class="font-heading font-bold text-white text-sm">Barba Modelada</p>
+              <p class="text-xs text-gold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Clique para ampliar</p>
+            </div>
+          </div>
+
+          <div class="reveal stagger-2 gallery-item h-64 sm:h-80 border border-white/10" data-cat="fade" data-caption="Fade médio com tesoura no topo e textura natural">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=600&auto=format&fit=crop" alt="Fade médio" class="w-full h-full object-cover" loading="lazy">
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-carbon/95 via-carbon/20 to-transparent flex flex-col justify-end p-4">
+              <p class="font-heading font-bold text-white text-sm">Mid Fade + Textura</p>
+              <p class="text-xs text-gold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Clique para ampliar</p>
+            </div>
+          </div>
+
+          <div class="reveal stagger-3 gallery-item h-64 sm:h-80 border border-gold/40" data-cat="fade" data-caption="Degradê navalhado e alinhamento milimétrico">
+            <img src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?q=80&w=600&auto=format&fit=crop" alt="Corte navalha" class="w-full h-full object-cover" loading="lazy">
+            <div class="overlay absolute inset-0 bg-gradient-to-t from-carbon/95 via-carbon/20 to-transparent flex flex-col justify-end p-4">
+              <p class="font-heading font-bold text-white text-sm">Navalhado Master</p>
+              <p class="text-xs text-gold"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Clique para ampliar</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal mt-10 text-center">
+          <a href="https://instagram.com/nycolasxz0_" target="_blank" class="inline-flex items-center gap-3 btn-outline rounded-xl px-8 py-4 font-heading font-bold text-sm text-white">
+            <i class="fa-brands fa-instagram text-xl text-gold"></i> VER MAIS FOTOS NO INSTAGRAM @NYCOLASXZ0_
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. AVALIAÇÕES ================= -->
+    <section id="avaliacoes" class="py-24 bg-carbon relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="reveal text-gold font-heading font-bold tracking-[.35em] text-xs uppercase mb-3">— Depoimentos</p>
+          <h2 class="reveal stagger-1 font-display text-5xl sm:text-6xl text-white">QUEM CORTA, <span class="text-gold-gradient">RECOMENDA.</span></h2>
+          <div class="reveal stagger-2 mt-6 inline-flex items-center gap-4 bg-smoke border border-gold/25 rounded-2xl px-6 py-3">
+            <span class="font-display text-4xl text-white">4.9</span>
+            <div class="text-left">
+              <div class="flex gap-1 text-yellow-400 text-xs">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5">Nota média em Rio das Ostras</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carrossel -->
+        <div class="reveal relative">
+          <div class="overflow-hidden -mx-3">
+            <div id="tTrack" class="flex">
+              <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3">
+                <div class="t-card h-full bg-smoke border border-white/10 rounded-2xl p-7 flex flex-col">
+                  <div class="flex gap-1 text-yellow-400 text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="text-zinc-300 leading-relaxed flex-1">"Melhor degradê de Rio das Ostras! O atendimento na Rua Bangu é diferenciado e ainda tomei uma cerveja bem gelada enquanto aguardava."</p>
+                  <div class="flex items-center gap-3 mt-6 pt-5 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center font-bold text-gold">L</div>
+                    <div>
+                      <p class="font-heading font-bold text-white text-sm">Lucas Santos</p>
+                      <p class="text-xs text-zinc-500">Cliente Frequente</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3">
+                <div class="t-card h-full bg-smoke border border-white/10 rounded-2xl p-7 flex flex-col">
+                  <div class="flex gap-1 text-yellow-400 text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="text-zinc-300 leading-relaxed flex-1">"Acompanho pelo Instagram @nycolasxz0_ e quando fui cortar superou todas as expectativas. Barba na toalha quente perfeita!"</p>
+                  <div class="flex items-center gap-3 mt-6 pt-5 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center font-bold text-gold">M</div>
+                    <div>
+                      <p class="font-heading font-bold text-white text-sm">Matheus Lima</p>
+                      <p class="text-xs text-zinc-500">Rio das Ostras</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3">
+                <div class="t-card h-full bg-smoke border border-white/10 rounded-2xl p-7 flex flex-col">
+                  <div class="flex gap-1 text-yellow-400 text-sm mb-3">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="text-zinc-300 leading-relaxed flex-1">"Pontualidade nota 10, sem fila. Preço super honesto e ambiente climatizado muito confortável. Recomendo a todos."</p>
+                  <div class="flex items-center gap-3 mt-6 pt-5 border-t border-white/10">
+                    <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center font-bold text-gold">R</div>
+                    <div>
+                      <p class="font-heading font-bold text-white text-sm">Rodrigo Alves</p>
+                      <p class="text-xs text-zinc-500">Cliente Fiel</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center gap-4 mt-8">
+            <button id="tPrev" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-zinc-300 hover:border-gold hover:text-gold transition" aria-label="Anterior">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div id="tDots" class="flex gap-2"></div>
+            <button id="tNext" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-zinc-300 hover:border-gold hover:text-gold transition" aria-label="Próximo">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. CONTATO E MAPA (RUA BANGU, RIO DAS OSTRAS) ================= -->
+    <section id="contato" class="py-24 bg-graphite relative overflow-hidden border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="reveal text-gold font-heading font-bold tracking-[.35em] text-xs uppercase mb-3">— Onde nos encontrar</p>
+          <h2 class="reveal stagger-1 font-display text-5xl sm:text-6xl text-white">LOCALIZAÇÃO & <span class="text-gold-gradient">CONTATO</span></h2>
+          <div class="gold-divider w-40 mx-auto mt-5"></div>
+          <p class="reveal stagger-2 text-zinc-400 mt-4">Localização privilegiada na Rua Bangu em Rio das Ostras - RJ. Venha nos visitar ou garanta seu horário online.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-8">
+          <!-- Info -->
+          <div class="reveal-left lg:col-span-2 space-y-4">
+            <!-- Card Endereço -->
+            <div class="card-border rounded-2xl bg-smoke p-6">
+              <div class="flex gap-4 items-start">
+                <div class="w-12 h-12 shrink-0 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center text-gold text-xl">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="font-heading font-bold text-white text-lg">Endereço da Barbearia</h4>
+                  <p class="text-zinc-300 mt-1 leading-relaxed">
+                    <strong class="text-gold-light">Rua Bangu</strong><br>
+                    Rio das Ostras — RJ<br>
+                    <span class="text-xs text-zinc-400">Ponto de fácil acesso com estacionamento nas proximidades.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Instagram Oficial -->
+            <div class="card-border rounded-2xl bg-smoke p-6">
+              <div class="flex gap-4 items-center">
+                <div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 flex items-center justify-center text-white text-2xl">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-heading font-bold text-white">Instagram Oficial</h4>
+                  <p class="text-sm text-gold-light font-semibold">@nycolasxz0_</p>
+                  <a href="https://instagram.com/nycolasxz0_" target="_blank" class="text-xs text-zinc-400 hover:text-white underline mt-0.5 block">Seguir perfil no Insta →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Horários & Bebidas -->
+            <div class="card-border rounded-2xl bg-smoke p-6">
+              <div class="flex gap-4 items-start mb-4">
+                <div class="w-12 h-12 shrink-0 rounded-xl bg-gold/10 border border-gold/25 flex items-center justify-center text-gold text-xl">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                  <h4 class="font-heading font-bold text-white">Horário & Bar</h4>
+                  <p id="hoursStatus" class="text-xs mt-1 font-bold text-green-400">● Aberto agora</p>
+                </div>
+              </div>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Segunda — Sexta</span>
+                  <span class="font-bold text-white">09h às 20h</span>
+                </div>
+                <div class="flex justify-between border-b border-white/5 pb-2">
+                  <span class="text-zinc-400">Sábado</span>
+                  <span class="font-bold text-gold-light">08h às 18h</span>
+                </div>
+                <div class="flex justify-between pt-1">
+                  <span class="text-zinc-400">Cerveja (R$ 6) / Água (R$ 2,50)</span>
+                  <span class="text-gold font-bold">Disponíveis</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/5521959222051?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20corte%20na%20barbearia%20DA%20F%C3%89%2022%20(Rua%20Bangu,%20Rio%20das%20Ostras)." target="_blank" class="btn-gold rounded-2xl p-4 text-center font-heading font-extrabold flex items-center justify-center gap-2 w-full">
+              <i class="fa-brands fa-whatsapp text-xl"></i> CHAMAR NO WHATSAPP: (21) 95922-2051
+            </a>
+          </div>
+
+          <!-- Mapa Interativo + Form -->
+          <div class="reveal-right lg:col-span-3 space-y-6">
+            <!-- MAPA DA RUA BANGU, RIO DAS OSTRAS -->
+            <div class="rounded-3xl overflow-hidden border border-gold/30 h-80 relative shadow-card">
+              <iframe 
+                title="Mapa Rua Bangu, Rio das Ostras" 
+                src="https://maps.google.com/maps?q=Rua%20Bangu,%20Rio%20das%20Ostras,%20RJ,%20Brasil&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                class="w-full h-full grayscale-[50%] contrast-[1.1]" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+              <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 bg-carbon/90 backdrop-blur border border-gold/40 p-3 rounded-2xl">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-location-dot text-gold text-base"></i>
+                  <span class="text-xs text-white font-heading font-bold">Rua Bangu • Rio das Ostras - RJ</span>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Bangu+Rio+das+Ostras+RJ" target="_blank" class="bg-gold text-carbon text-xs font-heading font-extrabold px-3.5 py-1.5 rounded-xl hover:bg-gold-light transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-diamond-turn-right"></i> ABRIR NO GPS
+                </a>
+              </div>
+            </div>
+
+            <!-- Form rápido -->
+            <div class="card-border rounded-2xl bg-smoke p-6 sm:p-8">
+              <h3 class="font-display text-3xl text-white">SOLICITAR HORÁRIO <span class="text-gold-gradient">RÁPIDO</span></h3>
+              <p class="text-xs sm:text-sm text-zinc-400 mt-1">Envie seus dados e seja direcionado para confirmar no WhatsApp.</p>
+              
+              <form id="contactForm" class="mt-5 grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="text-xs font-heading font-bold uppercase text-zinc-400">Seu Nome *</label>
+                  <input id="cfName" required type="text" placeholder="Ex: Carlos Silva" class="mt-1.5 w-full bg-carbon border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition">
+                </div>
+                <div>
+                  <label class="text-xs font-heading font-bold uppercase text-zinc-400">Serviço *</label>
+                  <select id="cfService" required class="mt-1.5 w-full bg-carbon border border-white/10 rounded-xl px-4 py-3 text-sm text-white transition">
+                    <option value="">Selecione o serviço...</option>
+                    <option>Corte Degradê / Fade — R$ 45</option>
+                    <option>Combo Corte + Barba — R$ 70</option>
+                    <option>Barba Modelada — R$ 35</option>
+                    <option>Corte Clássico — R$ 40</option>
+                    <option>Degradê + Pigmentação — R$ 55</option>
+                    <option>Selagem — R$ 80</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="text-xs font-heading font-bold uppercase text-zinc-400">Alguma preferência ou bebida? (Opcional)</label>
+                  <input id="cfMsg" type="text" placeholder="Ex: Chego às 17h, separa uma cerveja gelada (R$ 6)" class="mt-1.5 w-full bg-carbon border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600 transition">
+                </div>
+                <button type="submit" class="sm:col-span-2 btn-gold rounded-xl py-3.5 font-heading font-extrabold flex items-center justify-center gap-2">
+                  <i class="fa-brands fa-whatsapp text-lg"></i> ENVIAR PEDIDO DE AGENDAMENTO
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="bg-[#080809] border-t border-gold/15 pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-light to-gold-dark flex items-center justify-center">
+              <i class="fa-solid fa-scissors text-carbon"></i>
+            </div>
+            <span class="font-display text-3xl text-white">DA FÉ <span class="text-gold-gradient">22</span></span>
+          </div>
+          <p class="text-sm text-zinc-400 leading-relaxed">
+            Barbearia de alto padrão localizada na Rua Bangu em Rio das Ostras - RJ. Cortes, barbas e bebidas de qualidade.
+          </p>
+          <div class="flex gap-3 mt-5">
+            <a href="https://instagram.com/nycolasxz0_" target="_blank" aria-label="Instagram @nycolasxz0_" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-carbon hover:bg-gold hover:border-gold transition" title="Instagram @nycolasxz0_">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5521959222051" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-carbon hover:bg-gold hover:border-gold transition">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-extrabold text-white text-sm tracking-widest uppercase mb-4">Navegação</h4>
+          <ul class="space-y-2.5 text-sm text-zinc-400">
+            <li><a href="#inicio" class="hover:text-gold transition">Início</a></li>
+            <li><a href="#cortes" class="hover:text-gold transition">Cortes & Preços</a></li>
+            <li><a href="#bebidas" class="hover:text-gold transition">Bebidas (Água & Cerveja)</a></li>
+            <li><a href="#galeria" class="hover:text-gold transition">Galeria</a></li>
+            <li><a href="#contato" class="hover:text-gold transition">Rua Bangu (Mapa)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-extrabold text-white text-sm tracking-widest uppercase mb-4">Cardápio & Bebidas</h4>
+          <ul class="space-y-2.5 text-sm text-zinc-400">
+            <li>Corte Degradê — <span class="text-white font-semibold">R$ 45,00</span></li>
+            <li>Combo Corte + Barba — <span class="text-gold-light font-semibold">R$ 70,00</span></li>
+            <li>Barba Modelada — <span class="text-white font-semibold">R$ 35,00</span></li>
+            <li class="pt-2 border-t border-white/5 text-gold">🍺 Cerveja Gelada — <strong>R$ 6,00</strong></li>
+            <li class="text-blue-300">💧 Água Mineral — <strong>R$ 2,50</strong></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-extrabold text-white text-sm tracking-widest uppercase mb-4">Localização & Redes</h4>
+          <ul class="space-y-3 text-sm text-zinc-400">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-gold mt-0.5"></i>
+              <span>Rua Bangu, Rio das Ostras - RJ</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-brands fa-instagram text-gold"></i>
+              <a href="https://instagram.com/nycolasxz0_" target="_blank" class="hover:text-gold transition font-bold text-white">@nycolasxz0_</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-gold"></i>
+              <a href="tel:+5521959222051" class="hover:text-gold transition font-bold text-white">(21) 95922-2051</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="gold-divider"></div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500">
+        <p>© <span id="year">2026</span> <strong class="text-zinc-300">DA FÉ 22 Barbearia</strong> — Rua Bangu, Rio das Ostras. Todos os direitos reservados.</p>
+        <p class="flex items-center gap-1.5">Instagram: <a href="https://instagram.com/nycolasxz0_" target="_blank" class="text-gold hover:underline font-semibold">@nycolasxz0_</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLUTUANTES ================= -->
+  <a href="https://wa.me/5521959222051?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20DA%20F%C3%89%2022%20(Rua%20Bangu,%20Rio%20das%20Ostras)." target="_blank" aria-label="WhatsApp" class="wa-float fixed bottom-6 right-6 z-[60] w-[60px] h-[60px] rounded-full bg-[#25D366] flex items-center justify-center shadow-2xl hover:scale-110 transition">
+    <i class="fa-brands fa-whatsapp text-white text-3xl"></i>
+  </a>
+
+  <button id="backTop" class="fixed bottom-6 left-6 z-[60] w-12 h-12 rounded-full bg-graphite border border-gold/40 items-center justify-center text-gold hover:bg-gold hover:text-carbon transition hidden" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-24 right-6 z-[95] translate-x-[120%] opacity-0 bg-smoke border border-gold/40 rounded-2xl px-5 py-4 shadow-card flex items-center gap-3 max-w-xs">
+    <div class="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center shrink-0">
+      <i class="fa-solid fa-circle-check text-gold"></i>
+    </div>
+    <p id="toastMsg" class="text-sm text-white font-semibold">Horário reservado!</p>
+  </div>
+
+  <!-- ================= MODAL DE AGENDAMENTO ================= -->
+  <div id="bookingModal" class="fixed inset-0 z-[85] hidden items-center justify-center p-4">
+    <div class="modal-bg absolute inset-0" data-booking-close></div>
+    <div class="modal-panel relative w-full max-w-2xl bg-graphite border border-gold/25 rounded-3xl overflow-hidden shadow-card max-h-[92vh] overflow-y-auto">
+      
+      <div class="bg-gradient-to-r from-gold-deep via-gold-dark to-gold-deep px-6 sm:px-8 py-5 flex items-center justify-between sticky top-0 z-10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-carbon/80 flex items-center justify-center">
+            <i class="fa-solid fa-calendar-check text-gold"></i>
+          </div>
+          <div>
+            <h3 class="font-heading font-extrabold text-white leading-none">Agendar Horário</h3>
+            <p class="text-xs text-gold-pale/80 mt-1">DA FÉ 22 • Rua Bangu, Rio das Ostras</p>
+          </div>
+        </div>
+        <button data-booking-close class="w-10 h-10 rounded-full bg-carbon/40 hover:bg-carbon transition flex items-center justify-center text-white" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Indicador passos -->
+      <div class="px-6 sm:px-8 pt-6 flex items-center gap-2">
+        <div class="step-dot flex-1 text-center">
+          <div class="sd-bar h-1.5 rounded-full bg-gold transition"></div>
+          <p class="sd-label text-[10px] font-bold tracking-widest uppercase text-gold mt-1.5">Serviço</p>
+        </div>
+        <div class="step-dot flex-1 text-center">
+          <div class="sd-bar h-1.5 rounded-full bg-white/10 transition"></div>
+          <p class="sd-label text-[10px] font-bold tracking-widest uppercase text-zinc-500 mt-1.5">Data & Hora</p>
+        </div>
+        <div class="step-dot flex-1 text-center">
+          <div class="sd-bar h-1.5 rounded-full bg-white/10 transition"></div>
+          <p class="sd-label text-[10px] font-bold tracking-widest uppercase text-zinc-500 mt-1.5">Seus dados</p>
+        </div>
+      </div>
+
+      <div class="p-6 sm:px-8 pb-8">
+        <!-- PASSO 1 -->
+        <div class="bstep" data-step="1">
+          <p class="font-heading font-bold text-white mb-4">1. Escolha o serviço:</p>
+          <div id="serviceList" class="grid sm:grid-cols-2 gap-3">
+            <div class="service-opt border border-white/10 rounded-xl p-4 flex justify-between items-center" data-value="Corte Degradê / Fade — R$ 45">
+              <div>
+                <p class="font-heading font-bold text-white text-sm">Corte Degradê</p>
+                <p class="text-xs text-zinc-400">30-40 min</p>
+              </div>
+              <span class="font-heading font-extrabold text-gold">R$ 45</span>
+            </div>
+
+            <div class="service-opt border border-white/10 rounded-xl p-4 flex justify-between items-center" data-value="Combo Corte + Barba — R$ 70">
+              <div>
+                <p class="font-heading font-bold text-white text-sm">Combo Corte + Barba</p>
+                <p class="text-xs text-gold">★ Mais pedido</p>
+              </div>
+              <span class="font-heading font-extrabold text-gold">R$ 70</span>
+            </div>
+
+            <div class="service-opt border border-white/10 rounded-xl p-4 flex justify-between items-center" data-value="Barba Modelada — R$ 35">
+              <div>
+                <p class="font-heading font-bold text-white text-sm">Barba Modelada</p>
+                <p class="text-xs text-zinc-400">25-30 min</p>
+              </div>
+              <span class="font-heading font-extrabold text-gold">R$ 35</span>
+            </div>
+
+            <div class="service-opt border border-white/10 rounded-xl p-4 flex justify-between items-center" data-value="Corte Clássico — R$ 40">
+              <div>
+                <p class="font-heading font-bold text-white text-sm">Corte Clássico</p>
+                <p class="text-xs text-zinc-400">Tesoura</p>
+              </div>
+              <span class="font-heading font-extrabold text-gold">R$ 40</span>
+            </div>
+
+            <div class="service-opt border border-white/10 rounded-xl p-4 flex justify-between items-center" data-value="Degradê + Pigmentação — R$ 55">
+              <div>
+                <p class="font-heading font-bold text-white text-sm">Degradê + Pigmentação</p>
+                <p class="text-xs text-zinc-400">Efeito HD</p>
+              </div>
+              <span class="font-heading font-extrabold text-gold">R$ 55</span>
+            </div>
+
+            <div class="service-opt border border-white/10 rounded-xl p-4 flex justify-between items-center" data-value="Selagem — R$ 80">
+              <div>
+                <p class="font-heading font-bold text-white text-sm">Selagem Capilar</p>
+                <p class="text-xs text-zinc-400">Alinhamento</p>
+              </div>
+              <span class="font-heading font-extrabold text-gold">R$ 80</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASSO 2 -->
+        <div class="bstep hidden" data-step="2">
+          <p class="font-heading font-bold text-white mb-3">2. Escolha o dia:</p>
+          <div id="dayList" class="grid grid-cols-4 sm:grid-cols-7 gap-2 mb-6"></div>
+          
+          <p class="font-heading font-bold text-white mb-3">E o horário:</p>
+          <div id="timeList" class="grid grid-cols-3 sm:grid-cols-5 gap-2"></div>
+        </div>
+
+        <!-- PASSO 3 -->
+        <div class="bstep hidden" data-step="3">
+          <p class="font-heading font-bold text-white mb-4">3. Seus dados e preferências:</p>
+          <div class="space-y-4">
+            <div>
+              <label class="text-xs font-heading font-bold uppercase text-zinc-400">Seu Nome Completo *</label>
+              <input id="bkName" type="text" placeholder="Ex: Lucas Ferreira" class="mt-1.5 w-full bg-carbon border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600">
+            </div>
+            <div>
+              <label class="text-xs font-heading font-bold uppercase text-zinc-400">WhatsApp / Telefone *</label>
+              <input id="bkPhone" type="tel" placeholder="(22) 99999-9999" class="mt-1.5 w-full bg-carbon border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-zinc-600">
+            </div>
+            
+            <div id="bkSummary" class="bg-gold/10 border border-gold/30 rounded-xl p-4 text-sm text-zinc-300"></div>
+          </div>
+        </div>
+
+        <!-- Botões Modal -->
+        <div class="flex gap-3 mt-8">
+          <button id="bkBack" class="hidden flex-1 btn-outline rounded-xl py-3.5 font-heading font-bold text-sm text-white">
+            <i class="fa-solid fa-arrow-left mr-2"></i>VOLTAR
+          </button>
+          <button id="bkNext" class="flex-1 btn-gold rounded-xl py-3.5 font-heading font-extrabold text-sm">
+            CONTINUAR <i class="fa-solid fa-arrow-right ml-2"></i>
+          </button>
+          <a id="bkConfirm" href="#" target="_blank" class="hidden flex-1 bg-[#25D366] hover:bg-[#1fb857] transition rounded-xl py-3.5 font-heading font-extrabold text-sm text-carbon text-center flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i> CONFIRMAR NO WHATSAPP
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div id="lightbox" class="fixed inset-0 z-[90] hidden items-center justify-center p-4">
+    <div class="modal-bg absolute inset-0" id="lbClose"></div>
+    <div class="relative max-w-3xl w-full">
+      <img id="lbImg" src="" alt="Ampliação do corte" class="w-full rounded-2xl border border-gold/30 shadow-card object-cover max-h-[82vh]">
+      <p id="lbCap" class="text-center text-sm text-zinc-300 mt-3 font-heading font-semibold"></p>
+      
+      <button id="lbPrev" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-carbon/80 border border-gold/40 text-gold flex items-center justify-center hover:bg-gold hover:text-carbon transition" aria-label="Anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button id="lbNext" class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-carbon/80 border border-gold/40 text-gold flex items-center justify-center hover:bg-gold hover:text-carbon transition" aria-label="Próximo">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <button id="lbX" class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-gold hover:text-carbon transition" aria-label="Fechar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    /* =====================================================
+       DA FÉ 22 — Script Principal & Interatividade
+       ===================================================== */
+    (function(){
+      "use strict";
+      const $ = s => document.querySelector(s);
+      const $$ = s => document.querySelectorAll(s);
+
+      // Preloader
+      window.addEventListener('load', () => {
+        setTimeout(() => $('#preloader')?.classList.add('hidden'), 600);
+      });
+      setTimeout(() => $('#preloader')?.classList.add('hidden'), 3000);
+
+      // Scroll Header & Progresso
+      const header = $('#header'), progress = $('#scrollProgress'), backTop = $('#backTop');
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if(header) header.classList.toggle('scrolled', y > 40);
+        if(progress) {
+          const h = document.documentElement.scrollHeight - innerHeight;
+          progress.style.width = (y / h * 100) + '%';
+        }
+        if(backTop) {
+          backTop.style.display = y > 500 ? 'flex' : 'none';
+        }
+      }, {passive:true});
+
+      backTop?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+      // Menu Mobile
+      const menu = $('#mobileMenu'), panel = $('#mobilePanel'), menuBtn = $('#menuBtn');
+      let menuOpen = false;
+
+      function toggleMenu(force){
+        menuOpen = force !== undefined ? force : !menuOpen;
+        if(menuOpen){
+          menu?.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          requestAnimationFrame(() => panel?.classList.remove('translate-x-full'));
+        } else {
+          panel?.classList.add('translate-x-full');
+          document.body.style.overflow = '';
+          setTimeout(() => menu?.classList.add('hidden'), 400);
+        }
+      }
+
+      menuBtn?.addEventListener('click', () => toggleMenu());
+      $('#mobileOverlay')?.addEventListener('click', () => toggleMenu(false));
+      $$('.mobile-link').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+      // Reveal on Scroll
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            e.target.classList.add('active');
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.12});
+      $$('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+
+      // Contador Animado
+      const cio = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(!e.isIntersecting) return;
+          const el = e.target;
+          const target = +el.dataset.target;
+          if(!target) return;
+          const dur = 1500, t0 = performance.now();
+          (function tick(t){
+            const p = Math.min((t - t0) / dur, 1);
+            const ease = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(target * ease).toLocaleString('pt-BR');
+            if(p < 1) requestAnimationFrame(tick);
+          })(t0);
+          cio.unobserve(el);
+        });
+      }, {threshold: 0.5});
+      $$('.counter').forEach(el => cio.observe(el));
+
+      // Horário Funcionamento
+      (function checkHours(){
+        const now = new Date(), day = now.getDay(), h = now.getHours();
+        let open = false, text = '';
+        if(day === 0){
+          open = false; text = 'Fechado hoje • Abrimos segunda às 9h';
+        } else if(day === 6){
+          open = h >= 8 && h < 18;
+          text = open ? 'Aberto agora • Fecha às 18h' : 'Fechado • Sáb 8h às 18h';
+        } else {
+          open = h >= 9 && h < 20;
+          text = open ? 'Aberto agora • Fecha às 20h' : 'Fechado • Seg-Sex 9h às 20h';
+        }
+        const st = $('#statusText'), dot = $('#statusDot'), hs = $('#hoursStatus');
+        if(st) st.textContent = `${open ? 'Aberto agora' : 'Fechado'} • Rua Bangu, Rio das Ostras`;
+        if(dot) dot.className = `w-2 h-2 rounded-full ${open ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`;
+        if(hs) {
+          hs.textContent = `● ${text}`;
+          hs.className = `text-xs mt-1 font-bold ${open ? 'text-green-400' : 'text-red-400'}`;
+        }
+      })();
+
+      // Galeria & Filtros
+      const gItems = [...$$('.gallery-item')];
+      $$('.filter-btn').forEach(btn => btn.addEventListener('click', () => {
+        $$('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        gItems.forEach(it => {
+          const show = f === 'all' || it.dataset.cat === f;
+          it.style.display = show ? '' : 'none';
+        });
+      }));
+
+      // Lightbox
+      const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
+      let lbIndex = 0;
+      function visibleItems(){ return gItems.filter(i => i.style.display !== 'none'); }
+      function openLB(item){
+        const vis = visibleItems();
+        lbIndex = vis.indexOf(item);
+        lbImg.src = item.querySelector('img').src.replace('w=600', 'w=1200');
+        lbCap.textContent = item.dataset.caption || '';
+        lb?.classList.remove('hidden');
+        lb?.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLB(){
+        lb?.classList.add('hidden');
+        lb?.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      function navLB(dir){
+        const vis = visibleItems();
+        if(!vis.length) return;
+        lbIndex = (lbIndex + dir + vis.length) % vis.length;
+        lbImg.src = vis[lbIndex].querySelector('img').src.replace('w=600', 'w=1200');
+        lbCap.textContent = vis[lbIndex].dataset.caption || '';
+      }
+      gItems.forEach(it => it.addEventListener('click', () => openLB(it)));
+      $('#lbClose')?.addEventListener('click', closeLB);
+      $('#lbX')?.addEventListener('click', closeLB);
+      $('#lbPrev')?.addEventListener('click', e => { e.stopPropagation(); navLB(-1); });
+      $('#lbNext')?.addEventListener('click', e => { e.stopPropagation(); navLB(1); });
+
+      // Carrossel Depoimentos
+      const track = $('#tTrack');
+      if(track){
+        let tIndex = 0, autoT;
+        const total = track.children.length;
+        const perView = () => innerWidth >= 1024 ? 3 : innerWidth >= 768 ? 2 : 1;
+        const maxIdx = () => Math.max(0, total - perView());
+
+        function dotsBuild(){
+          const d = $('#tDots');
+          if(!d) return;
+          d.innerHTML = '';
+          for(let i=0; i <= maxIdx(); i++){
+            const b = document.createElement('button');
+            b.className = 'dot h-2.5 rounded-full ' + (i === tIndex ? 'active w-8 bg-[#C6A15B]' : 'w-2.5 bg-white/20');
+            b.addEventListener('click', () => { tIndex = i; updateT(); restartAuto(); });
+            d.appendChild(b);
+          }
+        }
+        function updateT(){
+          const firstCard = track.children[0];
+          if(!firstCard) return;
+          const w = firstCard.getBoundingClientRect().width;
+          track.style.transform = `translateX(-${tIndex * w}px)`;
+          [...($('#tDots')?.children || [])].forEach((dot, i) => {
+            dot.className = 'dot h-2.5 rounded-full transition-all ' + (i === tIndex ? 'active w-8 bg-[#C6A15B]' : 'w-2.5 bg-white/20');
+          });
+        }
+        function restartAuto(){
+          clearInterval(autoT);
+          autoT = setInterval(() => {
+            tIndex = tIndex >= maxIdx() ? 0 : tIndex + 1;
+            updateT();
+          }, 5000);
+        }
+        $('#tNext')?.addEventListener('click', () => { tIndex = tIndex >= maxIdx() ? 0 : tIndex + 1; updateT(); restartAuto(); });
+        $('#tPrev')?.addEventListener('click', () => { tIndex = tIndex <= 0 ? maxIdx() : tIndex - 1; updateT(); restartAuto(); });
+        window.addEventListener('resize', () => { dotsBuild(); tIndex = 0; updateT(); });
+        dotsBuild(); updateT(); restartAuto();
+      }
+
+      // Toast Feedback
+      function showToast(msg){
+        const t = $('#toast'), m = $('#toastMsg');
+        if(!t || !m) return;
+        m.textContent = msg;
+        t.style.transform = 'translateX(0)';
+        t.style.opacity = '1';
+        setTimeout(() => {
+          t.style.transform = 'translateX(120%)';
+          t.style.opacity = '0';
+        }, 3500);
+      }
+
+      // Modal Agendamento
+      const bModal = $('#bookingModal');
+      let bStep = 1, selService = '', selDay = '', selTime = '';
+      const times = ["09:00","10:00","11:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00"];
+
+      function openBooking(preService){
+        if(preService){
+          selService = preService;
+          $$('.service-opt').forEach(opt => {
+            opt.classList.toggle('selected', opt.dataset.value === preService);
+          });
+        }
+        bStep = 1;
+        renderBookingStep();
+        bModal?.classList.remove('hidden');
+        bModal?.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeBooking(){
+        bModal?.classList.add('hidden');
+        bModal?.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      $$('[data-booking-open]').forEach(btn => btn.addEventListener('click', () => {
+        openBooking(btn.dataset.service || '');
+      }));
+      $$('[data-booking-close]').forEach(btn => btn.addEventListener('click', closeBooking));
+
+      // Criar dias
+      (function buildDays(){
+        const wrap = $('#dayList');
+        if(!wrap) return;
+        const days = ['DOM','SEG','TER','QUA','QUI','SEX','SÁB'];
+        const months = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+        const today = new Date();
+        for(let i=0; i<7; i++){
+          const d = new Date(today);
+          d.setDate(today.getDate() + i);
+          const isSun = d.getDay() === 0;
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'day-opt border rounded-xl py-3 px-1 text-center transition ' + (isSun ? 'opacity-30 border-white/10 cursor-not-allowed' : 'border-white/10 hover:border-gold/60');
+          b.innerHTML = `<span class="block text-[10px] font-extrabold tracking-widest ${isSun ? 'text-zinc-600' : 'text-gold'}">${days[d.getDay()]}</span>
+                         <span class="block font-display text-2xl ${isSun ? 'text-zinc-600' : 'text-white'} leading-none mt-1">${String(d.getDate()).padStart(2,'0')}</span>
+                         <span class="block text-[10px] ${isSun ? 'text-zinc-600' : 'text-zinc-400'}">${months[d.getMonth()]}</span>`;
+          if(!isSun){
+            b.addEventListener('click', () => {
+              $$('.day-opt').forEach(x => x.classList.remove('selected'));
+              b.classList.add('selected');
+              selDay = `${days[d.getDay()]} ${String(d.getDate()).padStart(2,'0')}/${months[d.getMonth()]}`;
+            });
+          }
+          wrap.appendChild(b);
+        }
+
+        const tw = $('#timeList');
+        if(tw){
+          times.forEach(t => {
+            const s = document.createElement('button');
+            s.type = 'button';
+            s.className = 'slot border border-white/10 rounded-xl py-2.5 text-sm font-heading font-bold text-zinc-300';
+            s.textContent = t;
+            s.addEventListener('click', () => {
+              $$('.slot').forEach(x => x.classList.remove('selected'));
+              s.classList.add('selected');
+              selTime = t;
+            });
+            tw.appendChild(s);
+          });
+        }
+      })();
+
+      // Seleção de serviço no modal
+      $$('.service-opt').forEach(o => {
+        o.addEventListener('click', () => {
+          $$('.service-opt').forEach(x => x.classList.remove('selected'));
+          o.classList.add('selected');
+          selService = o.dataset.value;
+        });
+      });
+
+      function renderBookingStep(){
+        $$('.bstep').forEach(s => s.classList.toggle('hidden', +s.dataset.step !== bStep));
+        $$('.step-dot').forEach((d, i) => {
+          const bar = d.querySelector('.sd-bar'), lab = d.querySelector('.sd-label');
+          const active = i < bStep;
+          if(bar) bar.className = 'sd-bar h-1.5 rounded-full transition ' + (active ? 'bg-gold' : 'bg-white/10');
+          if(lab) lab.className = 'text-[10px] font-bold tracking-widest uppercase mt-1.5 ' + (active ? 'text-gold' : 'text-zinc-500');
+        });
+
+        $('#bkBack')?.classList.toggle('hidden', bStep === 1);
+        const last = bStep === 3;
+        $('#bkNext')?.classList.toggle('hidden', last);
+        $('#bkConfirm')?.classList.toggle('hidden', !last);
+
+        if(last && $('#bkSummary')){
+          $('#bkSummary').innerHTML = `
+            <p class="font-bold text-white mb-2">Resumo da Reserva em Rio das Ostras:</p>
+            <p class="text-xs text-zinc-300"><i class="fa-solid fa-scissors text-gold mr-2"></i><strong>Serviço:</strong> ${selService || 'Não selecionado'}</p>
+            <p class="text-xs text-zinc-300 mt-1"><i class="fa-solid fa-calendar text-gold mr-2"></i><strong>Horário:</strong> ${selDay || 'Hoje'} às ${selTime || 'A combinar'}</p>
+            <p class="text-xs text-zinc-300 mt-1"><i class="fa-solid fa-location-dot text-gold mr-2"></i><strong>Local:</strong> DA FÉ 22 — Rua Bangu, Rio das Ostras</p>
+          `;
+        }
+      }
+
+      $('#bkNext')?.addEventListener('click', () => {
+        if(bStep === 1 && !selService) return showToast('Selecione um serviço para continuar.');
+        if(bStep === 2 && (!selDay || !selTime)) return showToast('Escolha o dia e o horário desejado.');
+        if(bStep < 3){ bStep++; renderBookingStep(); }
+      });
+      $('#bkBack')?.addEventListener('click', () => { if(bStep > 1){ bStep--; renderBookingStep(); } });
+
+      $('#bkConfirm')?.addEventListener('click', function(e){
+        const name = $('#bkName')?.value.trim();
+        const phone = $('#bkPhone')?.value.trim();
+        if(!name){
+          e.preventDefault();
+          return showToast('Por favor, digite seu nome.');
+        }
+        const text = `Olá! Meu nome é *${name}* e gostaria de agendar na *DA FÉ 22* (Rua Bangu, Rio das Ostras):%0A%0A✂ *Serviço:* ${encodeURIComponent(selService)}%0A📅 *Data:* ${encodeURIComponent(selDay)}%0A⏰ *Horário:* ${encodeURIComponent(selTime)}%0A📱 *Contato:* ${encodeURIComponent(phone || 'Não informado')}%0A%0AAinda tem essa vaga disponível?`;
+        this.href = `https://wa.me/5521959222051?text=${text}`;
+      });
+
+      // Formulário Rápido de Contato
+      $('#contactForm')?.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = $('#cfName')?.value.trim() || 'Cliente';
+        const serv = $('#cfService')?.value || 'Corte';
+        const msg = $('#cfMsg')?.value.trim() || '';
+        const text = `Olá! Meu nome é *${name}*. Quero agendar um horário na *DA FÉ 22* na *Rua Bangu em Rio das Ostras*.%0A%0A✂ *Serviço:* ${encodeURIComponent(serv)}${msg ? `%0A📝 *Observações/Bebida:* ${encodeURIComponent(msg)}` : ''}`;
+        window.open(`https://wa.me/5521959222051?text=${text}`, '_blank');
+      });
+
+      // Teclado Esc
+      document.addEventListener('keydown', e => {
+        if(e.key === 'Escape'){
+          closeLB();
+          closeBooking();
+          toggleMenu(false);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
